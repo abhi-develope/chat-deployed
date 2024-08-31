@@ -7,7 +7,7 @@
         if(!token){
             return res.status(401).json({error: "no token, authorization denied"})
         }
-        const decoded = jwt.verify(token, process.env.JWT_token);
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         if(!decoded){
             return res.status(401).json({error: "invalid token"});
         }
