@@ -7,15 +7,15 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://localhost:3001",
+    origin: "https://chat-deployed-o29y.onrender.com",
     methods: ["GET", "POST"],
   },
 });
 
 // realtime message function
-export const getReceiverSocketId = (receiverId)=> {
-  return users[receiverId]
-}
+export const getReceiverSocketId = (receiverId) => {
+  return users[receiverId];
+};
 
 const users = {};
 
@@ -35,7 +35,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log("a user disconnected", socket.id);
     delete users[userId];
-    io.emit("getOnlineUsers", Object.keys(users))
+    io.emit("getOnlineUsers", Object.keys(users));
   });
 });
 
