@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3001,
     proxy: {
       "/api": {
-        target: "https://chat-deployed-o29y.onrender.com",
+        target: "https://chat-deployed-rfpr.onrender.com",
         changeOrigin: true,
       }
     }
