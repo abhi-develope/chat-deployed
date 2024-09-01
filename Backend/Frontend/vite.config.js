@@ -11,6 +11,7 @@ export default defineConfig({
         target: "https://chat-deployed-rfpr.onrender.com",
         changeOrigin: true,
       }
+      
     }
   }
 })
